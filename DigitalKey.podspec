@@ -64,8 +64,9 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  spec.platform     = :ios
   spec.platform     = :ios, "10.0"
+
+  spec.vendored_framework    = "#{spec.name.to_s}.framework"
 
   #  When using multiple platforms
   spec.ios.deployment_target = "10.0"
@@ -92,8 +93,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  spec.exclude_files = "Classes/Exclude"
+  #  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
+  #  spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
 
@@ -124,6 +125,8 @@ Pod::Spec.new do |spec|
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
 
+  spec.libraries    = "c++"
+  spec.xcconfig     = {"CLANG_CXX_LANGUAGE_STANDARD" => "c++11", "CLANG_CXX_LIBRARY" => "libc++"}
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
