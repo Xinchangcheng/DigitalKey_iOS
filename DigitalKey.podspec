@@ -66,11 +66,8 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios, "10.0"
 
-  spec.vendored_framework    = "#{spec.name.to_s}.framework"
-
   #  When using multiple platforms
-  spec.ios.deployment_target = "10.0"
-  
+  # spec.ios.deployment_target = "10.0"
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
@@ -93,11 +90,11 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  #  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
+  spec.source_files  = "DigitalKey_iOS/DigitalKey.framework/Headers/*.{h,m}"
   #  spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
-
+  spec.vendored_frameworks = 'DigitalKey_iOS/DigitalKey.framework'
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -138,5 +135,8 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
+
+  spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'armv7 arm64' }
+
 
 end
