@@ -67,6 +67,7 @@ typedef NS_ENUM (NSUInteger, DigitalKeyChangeStatus) {
 /// UserID
 @property (copy, nonatomic) NSString *userId;
 
+
 /// 数字钥匙状态
 @property (assign, nonatomic) DigitalKeySatus status;
 

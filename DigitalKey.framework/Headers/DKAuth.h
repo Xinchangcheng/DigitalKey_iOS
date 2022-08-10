@@ -105,7 +105,7 @@ verifyServerCertificate:(BOOL)verifyServerCertificate
 - (void)initSDK:(NSString *)userID baseURL:(NSString *)baseURL token:(NSString *)token;
 
 
-/// 初始化蓝牙配置
+/// 初始化
 /// @param serviceUUID 蓝牙服务  UUID
 /// @param readUUID    蓝牙读特征 UUID
 /// @param writeUUID   蓝牙写特征 UUID
@@ -272,7 +272,7 @@ verifyServerCertificate:(BOOL)verifyServerCertificate
 - (void)digitalKeyOwnerStatusWithVin:(NSString *)vin
                                block:(void (^)(DigitalKeySatus status,
                                                NSString *dkID,
-                                               NSError  *error))block;
+                                               NSError  * _Nullable error))block;
 
 /// 获取非车主数字钥匙列表
 /// @param vin        车辆信息
